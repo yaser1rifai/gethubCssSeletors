@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Selectors pdffile slack 28.01.2019</title>
+    <style>
+       
+        body{width: 100vw;height: 100vh; }
+        /* Q1 */
+    table{width: 50vh;height: 20vw;}
+    table,td,th {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 20px; 
+    font-weight: bold; 
+}
+ th { font-size: 20px; color: white; background: black;}
+ tr:nth-child(3) td {
+  color: red;
+}
+    
+tr:nth-child(n+6) td {
+  color: blue;
+} 
+
+/* Q2 */
+
+.container {border: 1px solid grey;width:55%;}
+
+div{font-weight: bold;font-size: 20px;}
+label[target=color]{color:blue;}
+label[target=color1]{color:red;}
+
+.container{border: 1px solid black;}
+/* Q3 */
+[target="specific"]{
+    border:1px solid black;
+    background:yellow;    }
+
+    [target=""]{
+    border:1px solid black;
+    background:yellowgreen;    }
+
+[target="fluffy"]{
+    border:1px solid black;
+    background:pink;    }
+/* Q4 */
+
+div img{
+        width:10vw;height:30vh;
+        padding:10px;
+        margin:10px;
+       
+    }
+    [title~="sky"]{
+        width:10vw;height:30vh;
+        border:4px dashed red;
+        padding:1px;
+       
+    }
+    /* Q5 */
+    /* span*/
+    div span:nth-child(-n+3){
+        color:sandybrown;
+        font-size: large;
+        font-weight:bold;
+    }
+    div span:last-child{
+        color:blue;
+        font-size:large;
+        font-weight:bold;
+    }
+    span::after{
+        content:",";
+        color:black
+    }
+    .fullstop::after{ 
+        content:"";
+    }
+    
+/* Q6 Q6. Use :not   */
+
+div label{
+    font-size:large;
+    padding:10px;
+  
+}
+div label:not(.different){
+    text-decoration: line-through;
+         
+}
+/* Q7   Q7. Use :nth-child() */
+    
+   .edit::after{ content: "(default)"; font-weight: normal;font-size:50%;}
+   .edit { font-weight: bold;font-size:150%; }
+
+        /* Q8   Use Combinators/ Pseudo-Classes  */
+.con2{border:3px solid pink; }
+.con2 span { font-size: 150%;}
+.xx {background-color: pink;}
+.box1 {background-color: lightskyblue;}
+.box2 {background-color:lightgrey;}
+
+/* Q9 */
+section p:first-child {background: grey;height:5vh;}
+section p:nth-child(2) {background:lightsalmon;height:5vh;}
+
+
+/* Q10 */
+
+.main-container{display:flex; padding:30px;font-size: large;} 
+ul{list-style-type:disc;}
+
+.container1 li:nth-child(2) { color: red;}
+.container1 li:nth-child(3) { color:green;}
+.container1 li:nth-child(6) { color: blue;}
+.container1 li:nth-child(7) { color:rgb(226, 137, 21);}
+
+.container2 li:nth-child(2) { color: pink;}
+.container2 li:nth-child(4) { color:rgb(226, 137, 21);text-decoration: line-through;}
+.container2 li:nth-child(6) { color:rgb(87, 6, 6);}
+.container2 li:nth-child(7) { color:rgb(167, 163, 163);}
+.container2 li:nth-child(7)::after { content: " (2nd from end)"; color:rgb(87, 83, 83);}
+
+/* Q11. Use Pseudo-Classes/Combinators */
+h4::first-letter { 
+  font-size: 200%;
+  color: blue;
+}
+h4::first-line { 
+color: red;
+}
+div span{background:grey;color: white;}
+.right {
+  position: absolute;
+  right: 0;
+  width: 150px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+  font-weight: bold;
+}
+
+        /* q13  Q14 */
+
+    </style>
+</head>
+ 
+<body>
+
+  <!-- Q1. Use Combinator selectors --> 
+   <h4> ----------------  Q1. Use Combinator selectors</h4>
+   <table>
+    <tr>
+      <th>Location</th>
+      <th>Temperature</th>
+    </tr>
+    <tr>
+      <td>London</td>
+      <td>21 &#8451 </td>
+     
+    </tr>
+    <tr>
+        <td>New York</td>
+        <td>16 &#8451 </td>
+    </tr>
+    <tr>
+        <td>Rome</td>
+        <td>23 &#8451 </td>
+       
+      </tr>
+      <tr>
+          <td>Berlin</td>
+          <td>14 &#8451 </td>
+      </tr>
+      <tr>
+        <td>Sydney</td>
+        <td>25 &#8451 </td>
+       
+      </tr>
+      <tr>
+          <td>Reykjavik</td>
+          <td>10 &#8451 </td>
+      </tr>
+
+  </table>
+  <br>
+ <h4> -------------- Q2  Use Attribute selectors</h4>
+ <div class="container"><br>
+        <input type="checkbox" >
+        <label target="color">Apple</label><br>
+        <input type="checkbox">
+        <label target="color1">Orange</label><br>
+        <input type="checkbox">
+        <label  target="color">Pear</label><br>
+        <input type="checkbox">
+        <label target="color" >Grape</label><br>
+        <input class="test" type="radio" checked>
+        <label >Plum</label><br>
+        <input type="radio">
+        <label>Pineapple</label><br>
+        <input type="radio">
+        <label>Mango</label><br><br>
+        <input type="text">
+        <button>Enter Fruit</button>
+    </div>
+
+    <h4> --------------  Q3 Use Attribute selectors------------</h4>
+    <div class="container">
+          <div>  <a href="#"  >this is alink with no target attribute</a></div><br>
+            <div> <a href="#" target="specific">this is alink with a specific target attribute</a></div><br>
+                <div>  <a href="#" target="" >this is alink with an empty target attribute</a></div><br>
+                    <div>   <a href="#" target="fluffy">this is alink with a fluffy target attribute</a></div><br>
+    </div>
+
+   <h4>----------------- Q4. Use Attribute selectors</h4>
+   <!--  Q4  images-->
+<div>
+    <img src="./11.jpg" width="100px">
+    <img src="./22.jpg" width="90px">
+    <img src="./33.jpg" title="sky" width="90x">
+</div>
+<h4>----------------- Q5. </h4>
+<!-- Q5 Demonstarting Case insensitive-->
+<div>
+        <span>Oak</span>
+        <span>cedar</span>
+        <span>Ash</span>
+        <span>Maple</span>
+        <span class="fullstop">Beech</span>
+</div><br>
+<!-- Q6 Q6. Use :not -->
+<div class="container">
+        <input type="checkbox" checked>
+        <label>Eat breakfast</label><br>
+        <input type="checkbox">
+        <label class="different">clean car</label><br>
+        <input type="checkbox" checked>
+        <label>Grocery shopping</label><br>
+        <input type="checkbox" checked>
+        <label>play games</label><br>
+        <input type="checkbox" checked>
+        <label>take a nap</label><br>
+        <input type="checkbox">
+        <label class="different">do some work</label><br>
+ </div><br>
+<!-- Q7. Use :nth-child() -->
+
+    <section class="container">
+        <input type="checkbox">
+        <label >Eat breakfast</label><br>
+        <input type="checkbox">
+        <label>clean car</label><br>
+        <input type="checkbox" checked>
+        <label class="edit">Grocery shopping</label><br>
+        <input type="checkbox" checked>
+        <label class="edit">play games</label><br>
+        <input type="checkbox" checked>
+        <label class="edit">take a nap</label><br>
+        <input type="checkbox">
+        <label>do some work</label><br>
+        <button>Reset</button>
+  
+    </section>
+
+<section class="con2">
+        <span>Enter Work E-mail<sup>*</sup></span><input type="text" class="xx"><br><br>
+            <span>Enter personal E-mail</span><input type="text" class="box2"><br><br>
+                <span>favorite website?</span><input type="text" class="box3"><br><br>
+</section>
+
+<!-- Q9 --><br>
+<section  style="font-weight:bold">
+    <p>Just a standard text which is read only</p>
+    
+    <p> However you can edit this content! Go ahead and click me to change the text.</p>
+    <input type="text" placeholder="Placeholder text..." id="placeholder">
+</section>
+<hr>
+<!--Q10. Use Pseudo-Classes/Combinators-->
+<h2>Shopping List</h2>
+<box class="main-container">
+<box class="container1">
+<ul>
+    <li>Milk</li>
+    <li>Eggs</li>
+    <li>Soap</li>
+    <li>Tomatoes</li>
+    <li>Pasta</li>
+    <li>Washing Powder</li>
+    <li>Salt</li>
+    <li>Baked Beans</li>
+</ul>
+</box>
+<box class="container2">
+    <ul>
+    <li>Milk</li>
+    <li>Eggs</li>
+    <li>Soap</li>
+    <li>Tomatoes</li>
+    <li>Pasta</li>
+    <li>Washing Powder</li>
+    <li>Salt</li>
+    <li>Baked Beans</li>
+</ul>
+<!-- Q11. Use Pseudo-Classes/Combinators -->
+<div class="right ">
+  <h4 >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+       consectetur necessitatibus! Repellendus, facere accusamus?</h4>
+ 
+  <span style="color:white;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere libero laborum quasi, architecto odit<span>
+</div>
+<!-- Q13  Q14 -->
+
+    
+
+
+</body>
+</html>
