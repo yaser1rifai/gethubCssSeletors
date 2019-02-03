@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Css Selectors</title>
+    <style>
+        /* h1 {
+            color: blue;
+        } */
+        /* p[target=abcd] {
+            background-color: yellow;
+        } */
+        /* div~p {
+            background-color: red;
+        } */
+        /* p:last-child {
+            color: blue;
+        }
+        p:first-child {
+            color: green;
+        } */
+        /* p:nth-child(odd) {
+            background: red;
+        }
+        p:nth-child(even) {
+            background: blue;
+        }
+        p:nth-child(odd) {
+            background: yellow;
+        } */
+        /* p:nth-child(2n + 1) {
+            background: pink;
+        } */
+        /* li:not(.different) {
+            color: blue;
+        }
+        h1:not(p) {
+            color: yellow;
+        } */
+        div {
+            background-color: yellow;
+            padding: 20px;
+            display: none;
+        }
+        
+        span:hover + div {
+            display: block;
+        }
+        .active-effect {
+            background-color: yellow;
+            padding: 20px;
+            display: none;
+        }
+        button:active + h1 {
+            display: block;
+        }
+        /* input[type=text] {
+            width: 100px;
+            -webkit-transition: width .35s ease-in-out;
+            transition: width .35s ease-in-out;
+        }
+        input[type=text]:focus {
+            width: 250px;
+        } */
+        input:focus {
+            background-color: yellow;
+        }
+        a:visited {
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <span>Hover over me!</span>
+    <div>I will show on hover</div> <br>
+    
+    <button>Click</button>
+    <h1 class="active-effect">I am active now!</h1> <br>
+    <!-- focus -->
+    <input type="text" name="search"> <br>
+    <!-- visited -->
+    <a href="https://www.google.com">Google</a><br>
+    <a href="https://www.indiehackers.com/">Indie Hackers</a><br>
+    <a href="https://news.ycombinator.com/">Indie Hackers</a><br>
+        
+    <!-- <h1>Body first child</h1>
+    <h1>Second child of body</h1>
+    <p>This is some text.</p>
+    <p>This is some text.</p>
+    <p>This is some text.</p>
+    <p>This is some text.</p>
+    <p>This is some text.</p>
+    <p>This is some text.</p>
+    <p>This is some text.</p>
+    <p>This is some text.</p> -->
+    <ul>
+        <li>List Item 1</li>
+        <li class="different">List Item 2</li>
+        <li>List Item 3</li>
+    </ul> 
+    <!-- <div>
+        <p>This is some text.</p>
+        <p>This is some text.</p>
+        <p>This is some text.</p>
+        <p>This is some text.</p>
+        <article>
+            <p>This is some text.</p>
+            <h1>Second child of article</h1>
+            <h1>Third child of article</h1>
+            <p>This is some text.</p>
+            <div>
+                <h1>First child of div</h1>
+                <h1>Second child of div</h1>
+            </div>
+        </article>
+        <p>This is some text.</p>
+    </div> -->
+    <!-- tag selector -->
+    <!-- <h1>Tag Selectors</h1>
+    <h1>Tag Selectors</h1>
+    <h1>Tag Selectors</h1>
+    <h1>Tag Selectors</h1>
+    <h1>Tag Selectors</h1>
+    <h1>Tag Selectors</h1> -->
+    <!-- attribute selector -->
+    <!-- <div>
+        <p>Paragraph 1 in the div.</p>
+        <p target="_round ">Paragraph 2 in the div.</p>
+        <p target="abcd">Paragraph 3 in the div.</p>
+    </div> -->
+          
+    <!-- descendent selectors -->
+    
+    <!-- <div>
+        <p>Paragraph 1 in the div.</p>
+        <p>Paragraph 2 in the div.</p>
+        <main><p>Paragraph 3 in the div.</p></main>
+    </div>
+    <p>Paragraph 4. Not in a div.</p>
+    <p>Paragraph 5. Not in a div.</p> -->             
+</body>
+</html>
+
+
+
+Collapse 
+10:10 AM
